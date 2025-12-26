@@ -21,9 +21,6 @@ tmp/
 .env.*
 !.env.example
 
-# Build artifacts
-.last-n8n-digest
-
 # Python
 __pycache__/
 *.py[cod]
