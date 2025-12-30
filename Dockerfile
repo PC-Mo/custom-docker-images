@@ -39,6 +39,22 @@ RUN node --version && \
     pip3 --version && \
     uv --version
 
+# 复制依赖配置文件
+COPY node-packages.txt /tmp/node-packages.txt
+
+# 读取配置并安装全局 node_modules 依赖包
+RUN if [ -s /tmp/node-packages.txt ]; then \
+        grep -v '^#' /tmp/node-packages.txt | grep -v '^[[:space:]]*$' | while read -r pkg; do \
+            if [ -n "$pkg" ]; then \
+                echo "Installing: $pkg" && \
+                npm install -g "$pkg"; \
+            fi; \
+        done; \
+    fi && \
+    # 清除 npm 缓存避免镜像过大
+    npm cache clean --force && \
+    rm -rf /tmp/* /root/.npm
+
 USER node
 WORKDIR /home/node
 

@@ -1,0 +1,10 @@
+# 全局 node_modules 依赖包配置
+# 每行一个包名，支持版本号 (如: package@version)
+# 以 # 开头的行为注释，空行会被忽略
+
+# 示例:
+# lodash
+# axios@1.6.0
+# moment
+
+tencentcloud-sdk-nodejs-ssl
