@@ -14,7 +14,7 @@ RUN apk add --no-cache curl && \
     curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # 阶段 3: 基于 n8n 官方镜像
-FROM docker.n8n.io/n8nio/n8n:latest
+FROM n8nio/n8n:latest
 
 USER root
 
