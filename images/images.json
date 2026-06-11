@@ -4,7 +4,7 @@
     "context": "images/n8n-python",
     "dockerfile": "Dockerfile",
     "image": "pptag/n8n-python",
-    "base_image": "docker.n8n.io/n8nio/n8n:latest",
+    "base_image": "n8nio/n8n:latest",
     "digest_file": ".digests/n8n-python",
     "platforms": "linux/amd64,linux/arm64",
     "paths": [
